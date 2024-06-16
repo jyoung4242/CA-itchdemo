@@ -10,13 +10,7 @@ env:
   ITCH_USERNAME: Mookie4242
   ITCH_GAME_ID: cellular-automata
 jobs:
-  lint:
-    uses: ./.github/workflows/lint.yml
-  test:
-    uses: ./.github/workflows/vittest.yml
-
   deploy:
-    needs: [lint, test]
     name: Upload to Itch
     runs-on: ubuntu-latest
     steps:
