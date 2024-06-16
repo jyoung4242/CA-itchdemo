@@ -1,5 +1,5 @@
 export function applyCellularAutomataRules(map: number[], width: number, height: number): number[] {
-  let newMap = new Array(width * height).fill(0);
+  const newMap = new Array(width * height).fill(0);
 
   for (let i = 0; i < height * width; i++) {
     for (let x = 0; x < width; x++) {

@@ -1,7 +1,8 @@
 import "./style.css";
 import { UI } from "@peasy-lib/peasy-ui";
-import { Engine, DisplayMode, TileMap, Rectangle, Color, Vector } from "excalibur";
+import { Engine, DisplayMode, TileMap, Vector } from "excalibur";
 import { bluey, model, template, whitey } from "./ui";
+//@ts-expect-error
 import { PerlinGenerator } from "@excaliburjs/plugin-perlin";
 
 export let generator: PerlinGenerator;
@@ -33,7 +34,7 @@ export function drawTilemap() {
   //loop through tiles in tmap and grab noise value
   game.remove(game.currentScene.tileMaps[0]);
   let tileIndex = 0;
-  for (let tile of tmap.tiles) {
+  for (const tile of tmap.tiles) {
     const noise = generator.noise(tile.x / tmap.columns, tile.y / tmap.rows);
     if (noise > 0.5) {
       model.tiles[tileIndex] = 1;

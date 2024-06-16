@@ -6,11 +6,13 @@ export const bluey = new Rectangle({ width: 16, height: 16, color: Color.fromRGB
 export const whitey = new Rectangle({ width: 16, height: 16, color: Color.fromRGB(255, 255, 255, 1) });
 
 export const model = {
+  //eslint-disable-next-line @typescript-eslint/no-empty-function
   resetSim: (_e: any, m: any) => {
     m.tiles = Array(1296).fill(0);
     getNewNoiseField();
     drawTilemap();
   },
+  //eslint-disable-next-line @typescript-eslint/no-empty-function
   runSim: (_e: any, m: any) => {
     m.tiles = applyCellularAutomataRules(m.tiles, 36, 36);
     redrawTilemap(m.tiles, tmap, game);
@@ -46,7 +48,7 @@ export const template = `
 function redrawTilemap(map: number[], tilemap: TileMap, game: Engine) {
   game.remove(game.currentScene.tileMaps[0]);
   let tileIndex = 0;
-  for (let tile of tilemap.tiles) {
+  for (const tile of tilemap.tiles) {
     const value = map[tileIndex];
     if (value == 1) {
       tile.addGraphic(bluey);
