@@ -62,7 +62,7 @@ function countAdjacentWalls(map: number[], width: number, height: number, index:
             if (coinflip > 0.5) count++;
             break;
           case "mirror":
-            if (i == 0 || j == 0) count++;
+            if (map[index] == 1) count++;
             break;
           default:
             count++; // Perceive out of bounds as wall

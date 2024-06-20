@@ -2,7 +2,6 @@ import "./style.css";
 import { UI } from "@peasy-lib/peasy-ui";
 import { Engine, DisplayMode, TileMap, Vector } from "excalibur";
 import { bluey, model, template, whitey } from "./ui";
-//@ts-expect-error
 import { PerlinGenerator } from "@excaliburjs/plugin-perlin";
 
 export let generator: PerlinGenerator;
